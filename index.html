@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="SharpNet enhances MLPs to represent functions with controlled non-differentiability">
+	<meta name="keywords" content="MLP, Sharp features, Poisson's equation, Jump Neumann boundary condition, Green's function, CAD">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+	<link rel="stylesheet" href="./static/css/bulma.min.css">
+	<link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+	<link rel="stylesheet" href="./static/css/academicons.min.css">
+	<link rel="stylesheet" href="./static/css/index.css">
+	<title>SharpNet</title>
+</head>
+
+<body>
+	<section class="hero">
+		<div class="hero-body">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered">
+					<div class="column has-text-centered">
+						<h1 class="title is-1 publication-title">SharpNet: Enhancing MLPs to Represent Functions with
+							Controlled <span style="white-space: nowrap;">Non-differentiability</span></h1>
+						<div class="subtitle is-4">
+							<span class="publication-venue">A preprint</span>
+						</div>
+						<div class="is-size-5 publication-authors">
+							<span class="author-block">
+								Hanting Niu<sup class="non-selectable" style="font-size: 0.8rem">1,2</sup>,
+							</span>
+							<span class="author-block">
+								Junkai Deng<sup class="non-selectable" style="font-size: 0.8rem">3</sup>,
+							</span>
+							<span class="author-block">
+								<a href="https://lcs.ios.ac.cn/~houf/" target="_blank">Fei Hou</a><sup
+									class="non-selectable" style="font-size: 0.8rem">1,2</sup>,
+							</span>
+							<span class="author-block">
+								<a href="https://lcs.ios.ac.cn/~whn/" target="_blank">Wencheng Wang</a><sup
+									class="non-selectable" style="font-size: 0.8rem">1,2</sup>,
+							</span>
+							<span class="author-block">
+								<a href="https://personal.ntu.edu.sg/yhe/" target="_blank">Ying He</a><sup
+									class="non-selectable" style="font-size: 0.8rem">3</sup>
+							</span>
+						</div>
+
+						<div class="is-size-5 publication-authors" style="margin-top: 1rem;">
+							<span class="author-block"><sup class="non-selectable"
+									style="font-size: 0.8rem; margin-right: 0.25rem;">1</sup>Institute of Software,
+								Chinese Academy of Sciences,</span>
+							<span class="author-block"><sup class="non-selectable"
+									style="font-size: 0.8rem; margin-right: 0.25rem;">2</sup>University of Chinese
+								Academy of Sciences,</span>
+							<span class="author-block"><sup class="non-selectable"
+									style="font-size: 0.8rem; margin-right: 0.25rem;">3</sup>College of Computing and
+								Data Science, Nanyang Technological University</span>
+						</div>
+
+						<div class="column has-text-centered">
+							<div class="publication-links">
+								<!-- PDF Link. -->
+								<span class="link-block">
+									<a href="https://arxiv.org/pdf/2601.19683" target="_blank"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fas fa-file-pdf"></i>
+										</span>
+										<span>Paper</span>
+									</a>
+								</span>
+								<!-- arXiv Link. -->
+								<span class="link-block">
+									<a href="https://arxiv.org/abs/2601.19683" target="_blank"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="ai ai-arxiv"></i>
+										</span>
+										<span>arXiv</span>
+									</a>
+								</span>
+								<!-- Code Link. -->
+								<span class="link-block">
+									<a href="https://github.com/SharpNetTech" target="_blank"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Code</span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container is-max-desktop">
+			<!-- Abstract. -->
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-3">Abstract</h2>
+					<div class="content has-text-justified">
+						<p>
+							Multi-layer perceptrons (MLPs) are a standard tool for learning and function approximation,
+							but they inherently yield outputs that are globally smooth. As a result, they struggle to
+							represent functions that are continuous yet deliberately non-differentiable (i.e., with
+							prescribed
+							<math>
+								<semantics>
+									<msup>
+										<mi>C</mi>
+										<mn>0</mn>
+									</msup>
+									<annotation encoding="application/x-tex">
+										C^0
+									</annotation>
+								</semantics>
+							</math>
+							sharp features) without relying on ad hoc post-processing. We present SharpNet, a modified
+							MLP architecture capable of encoding functions with user-defined sharp features by enriching
+							the network with an auxiliary feature function, which is defined as the solution to a
+							Poisson equation with jump Neumann boundary conditions. It is evaluated via an efficient
+							local integral that is fully differentiable with respect to the feature locations, enabling
+							our method to jointly optimize both the feature locations and the MLP parameters to recover
+							the target functions/models. The
+							<math>
+								<semantics>
+									<msup>
+										<mi>C</mi>
+										<mn>0</mn>
+									</msup>
+									<annotation encoding="application/x-tex">
+										C^0
+									</annotation>
+								</semantics>
+							</math>-continuity
+							of SharpNet is precisely controllable, ensuring
+							<math>
+								<semantics>
+									<msup>
+										<mi>C</mi>
+										<mn>0</mn>
+									</msup>
+									<annotation encoding="application/x-tex">
+										C^0
+									</annotation>
+								</semantics>
+							</math>
+							continuity at the feature locations and smoothness elsewhere. We validate SharpNet on 2D
+							problems and 3D CAD model reconstruction, and compare it against several state-of-the-art
+							baselines. In both types of tasks, SharpNet accurately recovers sharp edges and corners
+							while maintaining smooth behavior away from those features, whereas existing methods tend to
+							smooth out gradient discontinuities. Both qualitative and quantitative evaluations highlight
+							the benefits of our approach.
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--/ Abstract. -->
+		</div>
+	</section>
+
+	<section class="section" id="BibTeX">
+		<div class="container is-max-desktop content">
+			<h2 class="title">BibTeX</h2>
+			<pre><code>@misc{niu2026sharpnet,
+    title = {{SharpNet}: Enhancing {MLP}s to Represent Functions with Controlled Non-differentiability},
+    author = {Niu, Hanting and Deng, Junkai and Hou, Fei and Wang, Wencheng and He, Ying},
+    year = {2026},
+    eprint = {2601.19683},
+    archivePrefix = {arXiv},
+    primaryClass = {cs.CV},
+    url = {https://arxiv.org/abs/2601.19683},
+}</code></pre>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-8">
+					<div class="content">
+						<p>
+							This website is licensed under a <a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+						</p>
+						<p>
+							This page uses the layout template from <a target="_blank" href="https://nerfies.github.io">Nerfies</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
