@@ -161,7 +161,6 @@ body {
 
 .code-box pre {
   margin: 0 !important;
-  /* background-color: var(--background-secondary); */
 }
 
 .code-box pre code {
@@ -175,8 +174,6 @@ body {
   margin: 0.2rem;
   font-size: 0.9rem;
   font-weight: 600;
-  /* cursor: pointer; */
-  transition: var(--transition);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
