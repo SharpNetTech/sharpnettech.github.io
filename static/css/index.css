@@ -154,7 +154,7 @@ body {
 
 /* BibTeX Styling */
 .code-box {
-  background-color: currentColor;
+  background-color: var(--bulma-pre-background);
   overflow-x: auto;
   display: flex;
 }

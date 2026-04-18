@@ -11,7 +11,6 @@ function copyText() {
     if (payload) {
         navigator.clipboard.writeText(payload).then(function() {
             // Success feedback
-            button.classList.add('is-success');
             button.disabled = true; // Disable the button to prevent multiple clicks
             buttonIcon.classList.remove('fas', 'fa-copy');
             if (false) {
@@ -21,7 +20,6 @@ function copyText() {
             }
 
             setTimeout(function() {
-                button.classList.remove('is-success');
                 button.disabled = false; // Re-enable the button after feedback
                 buttonIcon.classList.remove('fas', 'fa-check', 'far', 'fa-circle'); // Remove checkmark classes
                 buttonIcon.classList.add('fas', 'fa-copy'); // Revert icon back to copy
@@ -36,7 +34,6 @@ function copyText() {
             document.execCommand('copy');
             document.body.removeChild(textArea);
 
-            button.classList.add('is-success');
             button.disabled = true; // Disable the button to prevent multiple clicks
             buttonIcon.classList.remove('fas', 'fa-copy');
             if (false) {
@@ -45,7 +42,6 @@ function copyText() {
                 buttonIcon.classList.add('fas', 'fa-check'); // Use checkmark for non-JaKo users
             }
             setTimeout(function() {
-                button.classList.remove('is-success');
                 button.disabled = false; // Re-enable the button after feedback
                 buttonIcon.classList.remove('fas', 'fa-check', 'far', 'fa-circle'); // Remove checkmark classes
                 buttonIcon.classList.add('fas', 'fa-copy'); // Revert icon back to copy
