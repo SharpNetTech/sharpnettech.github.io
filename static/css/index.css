@@ -152,6 +152,45 @@ body {
   border-radius: 5px;
 }
 
+/* BibTeX Styling */
+.code-box {
+  background-color: currentColor;
+  overflow-x: auto;
+  display: flex;
+}
+
+.code-box pre {
+  margin: 0 !important;
+  /* background-color: var(--background-secondary); */
+}
+
+.code-box pre code {
+  overflow-x: hidden;
+}
+
+.copy-btn {
+  background: transparent;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  /* cursor: pointer; */
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-btn.copied {
+  background: #10b981;
+}
+
+.copy-btn i {
+  margin: auto;
+  font-size: 0.9rem;
+}
+
 .non-selectable {
   user-select: none;
   -moz-user-select: none;
