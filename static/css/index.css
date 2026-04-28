@@ -179,13 +179,10 @@ body {
   gap: 0.5rem;
 }
 
-.copy-btn.copied {
-  background: #10b981;
-}
-
 .copy-btn i {
   margin: auto;
   font-size: 0.9rem;
+  transition-duration: var(--bulma-duration);
 }
 
 .non-selectable {

@@ -12,17 +12,13 @@ function copyText() {
         navigator.clipboard.writeText(payload).then(function() {
             // Success feedback
             button.disabled = true; // Disable the button to prevent multiple clicks
-            buttonIcon.classList.remove('fas', 'fa-copy');
-            if (false) {
-                buttonIcon.classList.add('far', 'fa-circle'); // Use checkmark for JaKo users
-            } else {
-                buttonIcon.classList.add('fas', 'fa-check'); // Use checkmark for non-JaKo users
-            }
+            buttonIcon.classList.remove('fa-copy');
+            buttonIcon.classList.add('fa-check');
 
             setTimeout(function() {
                 button.disabled = false; // Re-enable the button after feedback
-                buttonIcon.classList.remove('fas', 'fa-check', 'far', 'fa-circle'); // Remove checkmark classes
-                buttonIcon.classList.add('fas', 'fa-copy'); // Revert icon back to copy
+                buttonIcon.classList.remove('fa-check'); // Remove checkmark classes
+                buttonIcon.classList.add('fa-copy'); // Revert icon back to copy
             }, 2000);
         }).catch(function(err) {
             console.error('Failed to copy: ', err);
@@ -35,16 +31,12 @@ function copyText() {
             document.body.removeChild(textArea);
 
             button.disabled = true; // Disable the button to prevent multiple clicks
-            buttonIcon.classList.remove('fas', 'fa-copy');
-            if (false) {
-                buttonIcon.classList.add('far', 'fa-circle'); // Use checkmark for JaKo users
-            } else {
-                buttonIcon.classList.add('fas', 'fa-check'); // Use checkmark for non-JaKo users
-            }
+            buttonIcon.classList.remove('fa-copy');
+            buttonIcon.classList.add('fa-check');
             setTimeout(function() {
                 button.disabled = false; // Re-enable the button after feedback
-                buttonIcon.classList.remove('fas', 'fa-check', 'far', 'fa-circle'); // Remove checkmark classes
-                buttonIcon.classList.add('fas', 'fa-copy'); // Revert icon back to copy
+                buttonIcon.classList.remove('fa-check'); // Remove checkmark classes
+                buttonIcon.classList.add('fa-copy'); // Revert icon back to copy
             }, 2000);
         });
     }
