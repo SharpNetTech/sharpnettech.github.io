@@ -147,6 +147,7 @@ body {
 /* BibTeX Styling */
 .code-box {
   background-color: var(--bulma-pre-background);
+  border-radius: calc(var(--bulma-control-radius) + 0.2rem);
   overflow-x: auto;
   display: flex;
 }
