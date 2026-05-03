@@ -141,10 +141,7 @@
 					<h2 class="title is-3">Abstract</h2>
 					<div class="content has-text-justified">
 						<p>
-							Multi-layer perceptrons (MLPs) are a standard tool for learning and function approximation,
-							but they inherently yield outputs that are globally smooth. As a result, they struggle to
-							represent functions that are continuous yet deliberately non-differentiable (i.e., with
-							prescribed
+							Multi-layer perceptrons (MLPs) are a standard tool for learning and function approximation, but they inherently produce globally smooth outputs. Consequently, they struggle to represent functions that are continuous yet intentionally non-differentiable (i.e., functions with prescribed 
 							<math>
 								<semantics>
 									<msup>
@@ -156,25 +153,7 @@
 									</annotation>
 								</semantics>
 							</math>
-							sharp features) without relying on ad hoc post-processing. We present SharpNet, a modified
-							MLP architecture capable of encoding functions with user-defined sharp features by enriching
-							the network with an auxiliary feature function, which is defined as the solution to a
-							Poisson equation with jump Neumann boundary conditions. It is evaluated via an efficient
-							local integral that is fully differentiable with respect to the feature locations, enabling
-							our method to jointly optimize both the feature locations and the MLP parameters to recover
-							the target functions/models. The
-							<math>
-								<semantics>
-									<msup>
-										<mi>C</mi>
-										<mn>0</mn>
-									</msup>
-									<annotation encoding="application/x-tex">
-										C^0
-									</annotation>
-								</semantics>
-							</math>-continuity
-							of SharpNet is precisely controllable, ensuring
+							sharp features) without ad hoc post-processing. We present SharpNet, a modified MLP architecture that encodes user-specified sharp features by augmenting the network with an auxiliary feature function defined as the solution to Poisson's equation with jump Neumann boundary conditions. This feature function is evaluated via an efficient local integral and is fully differentiable with respect to the feature locations, allowing us to jointly optimize both the feature locations and the MLP parameters to recover the target function or geometry. This construction provides precise control over where non-differentiability occurs, enforcing the desired
 							<math>
 								<semantics>
 									<msup>
@@ -186,12 +165,7 @@
 									</annotation>
 								</semantics>
 							</math>
-							continuity at the feature locations and smoothness elsewhere. We validate SharpNet on 2D
-							problems and 3D CAD model reconstruction, and compare it against several state-of-the-art
-							baselines. In both types of tasks, SharpNet accurately recovers sharp edges and corners
-							while maintaining smooth behavior away from those features, whereas existing methods tend to
-							smooth out gradient discontinuities. Both qualitative and quantitative evaluations highlight
-							the benefits of our approach.
+							behavior at feature locations while preserving smoothness elsewhere. We validate SharpNet on 2D problems and 3D CAD reconstruction, and compare it with several state-of-the-art baselines. In both settings, SharpNet accurately recovers sharp edges and corners while remaining smooth away from them, whereas existing methods tend to blur gradient discontinuities. Qualitative and quantitative results demonstrate the effectiveness of our approach.
 						</p>
 					</div>
 				</div>
