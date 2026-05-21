@@ -9,14 +9,23 @@ The website is based on a template created by the authors of [Nerfies](https://g
 To cite SharpNet, please cite
 
 ```bibtex
-@misc{niu2026sharpnet,
-    title = {{SharpNet}: Enhancing {MLP}s to Represent Functions with Controlled Non-differentiability},
+@article{niu2026sharpnet,
     author = {Niu, Hanting and Deng, Junkai and Hou, Fei and Wang, Wencheng and He, Ying},
+    title = {{SharpNet}: Enhancing {MLP}s to Represent Functions with Controlled Non-differentiability},
     year = {2026},
-    eprint = {2601.19683},
-    archivePrefix = {arXiv},
-    primaryClass = {cs.CV},
-    url = {https://arxiv.org/abs/2601.19683},
+    issue_date = {July 2026},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {45},
+    number = {4},
+    issn = {0730-0301},
+    url = {https://doi.org/10.1145/3811330},
+    doi = {10.1145/3811330},
+    journal = {ACM Transactions on Graphics},
+    month = jul,
+    articleno = {113},
+    numpages = {19},
+    keywords = {MLP, Sharp features, Poisson's equation, Jump Neumann boundary condition, Green's function, CAD},
 }
 ```
 
