@@ -23,4 +23,4 @@ To cite SharpNet, please cite
 ## License ##
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 
-In accordance with the license requirements for the Nerfies template, the source code for this website is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+In accordance with the license requirements for the Nerfies template, the source code (excluding text and image materials) for this website is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Third-party libraries are licensed under their respective licenses.
