@@ -154,10 +154,18 @@ body {
 
 .code-box pre {
   margin: 0 !important;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .code-box pre code {
   overflow-x: hidden;
+}
+
+.copy-container {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-start;
 }
 
 .copy-btn {
